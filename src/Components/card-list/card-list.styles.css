@@ -1,0 +1,13 @@
+.Country-container{
+    border: 1px solid black;
+    margin: 30px;
+    text-align: center;
+}
+img {
+    width: 300px;
+    height: 200px;
+}
+.card-list{
+    display: flex;
+    justify-content: space-between;
+}
