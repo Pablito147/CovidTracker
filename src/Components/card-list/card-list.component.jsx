@@ -4,15 +4,16 @@ import { useState, useEffect } from 'react';
 import './card-list.styles.css'
 
 const CardList = ({ data }) => {
+    const displayedElements = 10;
 
 
     const toNumber = (number) => {
         // return number.toLocaleString()
-        return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+        return number > 1000 ? number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") : number;
     }
     return (
         data.map((countrie, i) => {
-            if (i < 5) {
+            if (i < displayedElements) {
                 return (
                     <div className="Country-container">
                         <img src={countrie.countryInfo.flag} alt="Avatar" ></img>

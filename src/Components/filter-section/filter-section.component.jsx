@@ -4,7 +4,7 @@ import axios from 'axios';
 
 import CardList from '../card-list/card-list.component';
 
-import './filter-section.styles.css'
+import './filter-section.styles.css';
 
 const FilterSection = () => {
     const urlStates = 'https://corona.lmao.ninja/v2/countries';
@@ -39,8 +39,6 @@ const FilterSection = () => {
     return (<div className='filter-section'>
         <input type="text" name="search" placeholder="Search country" onChange={(e) => setSearchCountries(e.target.value)}></input>
         <div className='flex-row-layout'>
-            {/* {filterCountries.map(item =>
-                <p>{item.country}</p>)} */}
             <CardList data={filterCountries}></CardList>
         </div>
     </div>)

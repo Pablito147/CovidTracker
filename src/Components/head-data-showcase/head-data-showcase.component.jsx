@@ -11,6 +11,9 @@ const DataShowCase = () => {
     const [casesDataInFormat, setCasesDataInFormat] = useState([]);
     const [deathsDataInFormat, setDeathsDataInFormat] = useState([]);
     const [recoveredDataInFormat, setRecoveresDataInFormat] = useState([]);
+    const [dateData, setDateData] = useState();
+    let datum = new Date(dateData).toString();
+    console.log(datum)
 
     const toNumber = (number) => {
         // return number.toLocaleString()
@@ -21,6 +24,7 @@ const DataShowCase = () => {
         const fetchData = async () => {
             const resultAll = await axios(urlStates);
 
+            setDateData(resultAll.data.updated)
             setCasesDataInFormat(toNumber(resultAll.data.cases))
             setDeathsDataInFormat(toNumber(resultAll.data.deaths))
             setRecoveresDataInFormat(toNumber(resultAll.data.recovered))
@@ -39,21 +43,21 @@ const DataShowCase = () => {
                 <h3>Cases</h3>
                 <div className="number">{casesDataInFormat}</div>
                 <div className="footerOfTop">
-                    <small>Fri Jan 15 2021 17:17:04 GMT+0100 (stredoeurópsky štandardný čas)</small>
+                    <small>{datum}</small>
                 </div>
             </div>
             <div className="secound">
                 <h3>Deaths</h3>
                 <span className="number">{deathsDataInFormat}</span>
                 <div className="footerOfTop">
-                    <small>Fri Jan 15 2021 17:17:04 GMT+0100 (stredoeurópsky štandardný čas)</small>
+                    <small>{datum}</small>
                 </div>
             </div>
             <div className="third">
                 <h3>Cured</h3>
                 <span className="number">{recoveredDataInFormat}</span>
                 <div className="footerOfTop">
-                    <small>Fri Jan 15 2021 17:17:04 GMT+0100 (stredoeurópsky štandardný čas)</small>
+                    <small>{datum}</small>
                 </div>
             </div>
         </div>)

@@ -2,19 +2,20 @@
 .filter-section{
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   margin: 20px;
 }
 .flex-row-layout{
     display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 input[type=text] {
-  width: 330px;
+  width: 530px;
   box-sizing: border-box;
   border: 2px solid rgb(36, 29, 29);
   border-radius: 4px;
   margin-top: 20px;
-  margin-left: 45px;
+  margin-left: 58px;
   font-size: 20px;
   background-color: white;
   background-position: 10px 10px; 
