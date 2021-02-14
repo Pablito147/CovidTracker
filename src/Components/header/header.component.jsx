@@ -1,21 +1,24 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-//import logo from '../../Assets / CovidLogo.jpg';
+import logo from '../../Assets/987px-Coronavirus_cartoon.svg';
+
 
 import './header.styles.css';
 
 const Header = () => (
     <div className='container-header'>
+        <div className='logo-img'>
+            <Link to="/">
+                <img className='' src={logo} alt="logo" />
+            </Link>
+        </div>
         <nav className='nav-items'>
-            <div className='logo'>
-                {/* //<logo className='' /> */}
-            </div>
             <ul className='links'>
                 <Link to="/about">
                     <li>About</li>
                 </Link>
-                <Link to="/slovakia">
+                <Link to="/Slovakia">
                     <li>Slovakia</li>
                 </Link>
                 <Link to="/news">

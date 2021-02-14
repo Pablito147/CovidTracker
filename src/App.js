@@ -1,8 +1,9 @@
 import { Switch, Route, BrowserRouter as Router } from 'react-router-dom';
 
-import Slovakia from './Components/slovakia/slovakia.component'
 import Home from './Components/home/home.component';
 import Header from './Components/header/header.component';
+import Slovakia from './Components/slovakia/slovakia.component'
+
 
 import './App.css';
 
@@ -13,10 +14,10 @@ function App() {
   return (
     <div className="root-container">
       <Router>
-        <Header></Header>
+        <Header />
         <Switch>
-          <Route path='/' exact component={Home} />
-          <Route path='/Slovakia' component={Slovakia} />
+          <Route exact path="/" component={Home} />
+          <Route path="/Slovakia" component={Slovakia} />
         </Switch>
       </Router>
     </div>
