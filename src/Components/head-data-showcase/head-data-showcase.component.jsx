@@ -13,7 +13,6 @@ const DataShowCase = () => {
     const [recoveredDataInFormat, setRecoveresDataInFormat] = useState([]);
     const [dateData, setDateData] = useState();
     let datum = new Date(dateData).toString();
-    console.log(datum)
 
     const toNumber = (number) => {
         // return number.toLocaleString()
@@ -34,7 +33,7 @@ const DataShowCase = () => {
     }
     useEffect(() => {
         getStatesData();
-    }, []);
+    });
 
 
     return (

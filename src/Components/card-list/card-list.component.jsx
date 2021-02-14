@@ -1,5 +1,4 @@
 import React from 'react';
-import { useState, useEffect } from 'react';
 
 import './card-list.styles.css'
 
@@ -9,13 +8,13 @@ const CardList = ({ data }) => {
 
     const toNumber = (number) => {
         // return number.toLocaleString()
-        return number > 1000 ? number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") : number;
+        return number > 10000 ? number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") : number;
     }
     return (
-        data.map((countrie, i) => {
-            if (i < displayedElements) {
+        data.filter((item, inedex) => inedex < displayedElements)
+            .map((countrie, i) => {
                 return (
-                    <div className="Country-container">
+                    <div key={i} className="Country-container">
                         <img src={countrie.countryInfo.flag} alt="Avatar" ></img>
                         <div>
                             <h3>{countrie.country}</h3>
@@ -31,10 +30,8 @@ const CardList = ({ data }) => {
                         </div>
                     </div>
                 )
-
             }
-        }
-        )
+            )
     )
 }
 export default CardList;

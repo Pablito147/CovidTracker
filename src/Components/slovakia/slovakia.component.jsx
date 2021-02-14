@@ -1,9 +1,8 @@
 import React from 'react';
 const Slovakia = () => (
     <div className='slovakia'>
-        Slovakia
+        <h1>slovakia</h1>
     </div>
 )
-
 
 export default Slovakia;

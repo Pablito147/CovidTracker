@@ -8,10 +8,7 @@ import './filter-section.styles.css';
 
 const FilterSection = () => {
     const urlStates = 'https://corona.lmao.ninja/v2/countries';
-
-
     const [data, setData] = useState([]);
-
 
     const getAllData = async () => {
         const fetchData = async () => {
@@ -26,14 +23,12 @@ const FilterSection = () => {
         getAllData();
     }, []);
 
-
     const [searchCountries, setSearchCountries] = useState("");
     const filterCountries = data.filter((item) => {
         return searchCountries !== ""
             ? item.country.toLowerCase().includes(searchCountries.toLowerCase())
             : item;
     });
-    console.log(filterCountries)
 
 
     return (<div className='filter-section'>
